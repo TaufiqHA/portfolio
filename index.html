@@ -7,6 +7,38 @@
     <title>Taufiq Hidayah A</title>
     <!-- 👇 css code file 👇 -->
     <link rel="stylesheet" href="./src/style/global.css" />
+
+    <!-- email js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("vwfTA5MS7tQoGuTtS");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            //this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("service_1lmqwhb", "template_6dafuvp", this).then(
+              function () {
+                console.log("SUCCESS!");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
   </head>
   <body>
     <nav>
@@ -135,25 +167,35 @@
         <h2>How you find me?</h2>
       </div>
       <div class="container">
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Message"
-        ></textarea>
+        <form id="contact-form">
+          <input type="hidden" name="contact_number" />
+          <input type="text" placeholder="Name" name="user_name" />
+          <input type="email" placeholder="Email" name="user_email" />
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Message"
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
       <div class="social-media">
         <div class="social-title">
           <h3>or on my social media</h3>
         </div>
         <div class="social-icon">
-          <a class="icon"
+          <a
+            href="https://web.facebook.com/takdir.hijrah"
+            class="icon"
+            target="_blank"
             ><img src="./src/img/facebook.svg" alt="facebook"
           /></a>
-          <a class="icon"
+          <a
+            href="https://www.instagram.com/htaufiq225/?next=%2F"
+            class="icon"
+            target="_blank"
             ><img src="./src/img/instagram.svg" alt="instagram"
           /></a>
         </div>
