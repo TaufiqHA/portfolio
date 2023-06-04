@@ -239,6 +239,7 @@ content .content-container .content-body p {
 
 .skill .container img {
   border-radius: 30px;
+  width: 50%;
 }
 
 .skill .container .content {
