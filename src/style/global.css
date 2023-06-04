@@ -455,3 +455,28 @@ footer .greeting p {
     font-size: 2.5em;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  nav ul {
+    display: none;
+  }
+
+  .navbar {
+    scale: 1;
+  }
+
+  .content .content-container .content-body p {
+    text-align: justify;
+    font-size: 13px;
+  }
+
+  .skill .container img {
+    width: 85%;
+  }
+
+  .skill .container .content p {
+    font-size: 13px;
+    text-indent: 0px;
+    text-align: justify;
+  }
+}
